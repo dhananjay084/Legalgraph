@@ -7,7 +7,6 @@ import {
   Sun
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import Modal from './Modal';
 import { toast } from 'react-toastify';
 
 interface HeaderProps {

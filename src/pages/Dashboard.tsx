@@ -11,8 +11,7 @@ import {
   Pencil, 
   Mail, 
   Trash2,
-  Download,
-  Filter
+  Download
 } from 'lucide-react';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../store';

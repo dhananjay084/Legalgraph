@@ -17,7 +17,7 @@ export interface COIData {
   createdAt: string;
 }
 
-interface COIState {
+export interface COIState {
   cois: COIData[];
 }
 

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import coiReducer from '../store/coiSlice';
 import StatCards from './StatCards';
+import type { RootState } from '../store';
 
 const renderWithRedux = (component: React.ReactNode) => {
   const store = configureStore({
@@ -27,7 +28,7 @@ const renderWithRedux = (component: React.ReactNode) => {
           },
         ],
       },
-    } as any,
+    } as RootState,
   });
   return render(<Provider store={store}>{component}</Provider>);
 };
