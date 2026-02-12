@@ -578,7 +578,7 @@ const Dashboard: React.FC = () => {
               {statuses.filter(s => s !== 'All').map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
-          <div className="form-group" style={{ gridColumn: 'span 2' }}>
+          <div className="form-group full-width">
             <label>Upload COI Document (Optional)</label>
             <input type="file" onChange={(e) => console.log('File selected:', e.target.files?.[0])} />
           </div>

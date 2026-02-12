@@ -222,7 +222,15 @@ body {
   min-height: 100vh;
 }
 
-/* Sidebar */
+.btn-icon-mobile {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .btn-icon-mobile {
+    display: block;
+  }
+}
 .sidebar {
   width: var(--sidebar-width);
   background-color: #f8fafc;
@@ -1136,6 +1144,10 @@ tbody tr:hover {
   margin-bottom: 0.5rem;
 }
 
+.form-group.full-width {
+  grid-column: span 2;
+}
+
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
@@ -1195,15 +1207,22 @@ tbody tr:hover {
 
 @media (max-width: 900px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-left {
+    margin-bottom: 0.5rem;
   }
   .header-right {
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    justify-content: flex-end;
   }
   .form-grid {
     grid-template-columns: 1fr;
+  }
+  .form-group.full-width {
+    grid-column: auto;
   }
 }
 
@@ -1227,20 +1246,39 @@ tbody tr:hover {
   .main-content {
     margin-left: 0;
     max-width: 100vw;
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .stat-cards {
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
   .table-controls {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
   }
   .search-group {
     justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .search-group .btn-primary {
+    flex-grow: 1;
+    justify-content: center;
   }
   .search-input-wrapper {
     max-width: none;
+    flex-grow: 1;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .header-right {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5rem;
   }
 }
 
@@ -1249,12 +1287,36 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
   .header-right {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .header-right .btn .btn-text {
+    display: none;
+  }
+  .header-right .btn {
+    padding: 0.5rem;
+    min-width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+  .user-profile {
+    margin-left: 0;
+  }
+  .user-info {
+    display: none;
+  }
+  .modal-content {
+    padding: 1.5rem;
   }
   .pagination {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+  .pagination-controls {
+    justify-content: center;
   }
   .bulk-actions-bar {
     flex-direction: column;

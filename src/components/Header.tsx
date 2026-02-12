@@ -1,10 +1,11 @@
 import React from 'react';
-import { 
+import {
   ChevronDown,
   Sparkles,
   HelpCircle,
   Moon,
-  Sun
+  Sun,
+  Mail
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
@@ -43,7 +44,8 @@ const Header: React.FC<HeaderProps> = ({ onThemeChange }) => {
       <div className="header-right">
         <div className="dropdown-container">
           <button className="btn btn-outline" onClick={() => setIsReminderMenuOpen(!isReminderMenuOpen)}>
-            Send Bulk Reminder <ChevronDown size={16} />
+            <Mail size={16} className="btn-icon-mobile" />
+            <span className="btn-text">Send Bulk Reminder</span> <ChevronDown size={16} />
           </button>
           {isReminderMenuOpen && (
             <div className="dropdown-menu">
@@ -55,14 +57,14 @@ const Header: React.FC<HeaderProps> = ({ onThemeChange }) => {
         </div>
         <button className="btn btn-primary-outline">
           <Sparkles size={16} />
-          Ask LegalGraph AI
+          <span className="btn-text">Ask LegalGraph AI</span>
         </button>
         <button className="btn btn-help" onClick={toggleTheme}>
           {isDark ? <Sun size={16} /> : <Moon size={16} />}
         </button>
         <button className="btn btn-help">
           <HelpCircle size={16} />
-          Help
+          <span className="btn-text">Help</span>
         </button>
         <div className="dropdown-container">
           <div className="user-profile" onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}>
